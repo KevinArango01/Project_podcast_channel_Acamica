@@ -1,25 +1,45 @@
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100&display=swap");
 * {
+  box-sizing: border-box;
   margin: 0px;
   padding: 0px;
 }
 
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+h1, h2, h3, p {
+  margin: 0px;
+  padding: 0px;
+}
+
+a {
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+
 .header {
-  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 15px;
+  padding: 0 16px;
   height: 44px;
 }
-.header .header-logo {
+.header .container-logo {
   height: 24px;
   width: 24px;
+}
+.header .container-logo .header-logo {
+  width: 100%;
+  height: auto;
 }
 .header .container-menu {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 2;
 }
 .header .container-menu .hamburguesa {
   position: relative;
@@ -45,9 +65,17 @@
   position: absolute;
   left: 0px;
   top: 38px;
-  padding: 10px;
   width: 100%;
-  height: auto;
+  padding: 24px 16px 0;
+}
+.header .container-menu .hamburguesa:checked ~ .menu .menu-option {
+  padding-bottom: 24px;
+  font-family: "IBM Plex Mono";
+  text-transform: uppercase;
+  font-size: 16px;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  line-height: 28px;
 }
 .header .container-menu .hamburguesa-label {
   position: relative;
@@ -66,8 +94,8 @@
   transition: 0.2s;
   top: 20%;
   height: 35%;
-  border-top: 2px solid black;
-  border-bottom: 2px solid black;
+  border-top: 2px solid #000000;
+  border-bottom: 2px solid #000000;
   background-color: transparent;
 }
 .header .container-menu .hamburguesa-label::after {
@@ -78,8 +106,8 @@
   box-sizing: border-box;
   transition: 0.2s;
   height: 1px;
-  background-color: black;
-  border-bottom: 2px solid black;
+  background-color: #000000;
+  border-bottom: 2px solid #000000;
   bottom: 20%;
 }
 .header .container-menu .menu {
@@ -90,31 +118,139 @@
   color: #FFF;
 }
 
-@media (min-width: 415px) {
+.section-Hello-World {
+  padding: 0 16px;
+  margin-top: 30px;
+  margin-bottom: 24px;
+}
+.section-Hello-World .tittle {
+  font-family: "IBM Plex Sans";
+  font-size: 36px;
+  line-height: 42px;
+  max-width: 260px;
+  font-weight: 400;
+  color: #060A24;
+  letter-spacing: 0;
+  margin-bottom: 16px;
+}
+.section-Hello-World .description {
+  margin-top: 16px;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 22px;
+  font-family: "IBM Plex Mono";
+  color: #060A24;
+}
+.section-Hello-World .button-hello-world {
+  height: 48px;
+  width: 100%;
+  max-width: 320px;
+  text-transform: uppercase;
+  color: #060A24;
+  border: none;
+  font-family: "IBM Plex Mono";
+  background: #00F3BB;
+  font-weight: 600;
+  margin-top: 36px;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 22px;
+  margin-bottom: 24px;
+  cursor: pointer;
+}
+.section-Hello-World .button-hello-world:hover {
+  color: #FFFFFF;
+  transition: 0.25s;
+  background: linear-gradient(to left, #0000FE, #00F3BB);
+}
+
+@media (min-width: 1280px) {
   .header {
+    padding: 0 100px;
     height: 80px;
   }
-  .header .header-logo {
+  .header .container-logo {
     height: 36px;
     width: 36px;
-  }
-  .header .container-menu {
-    display: inline-block;
   }
   .header .container-menu .hamburguesa-label {
     display: none;
   }
   .header .container-menu .menu {
-    display: inline-block;
-    position: absolute;
-    right: 100px;
+    display: flex;
+    position: relative;
+    left: auto;
+    top: auto;
     width: auto;
     background: transparent;
+    padding: 0;
   }
   .header .container-menu .menu .menu-option {
-    display: inline-block;
     color: #060A24;
-    margin-left: 20px;
+    font-size: 16px;
+    padding-bottom: 0px;
+    padding: 0 24px;
+    letter-spacing: 0;
+    line-height: 28px;
+    cursor: pointer;
+  }
+  .header .container-menu .menu .menu-option:last-child {
+    padding-right: 0px;
+  }
+  .header .container-menu .menu .menu-option:active {
+    color: #060A24 !important;
+    opacity: 56%;
+    text-decoration: line-through;
+    font-size: 16px;
+    padding-bottom: 0px;
+    padding: 0 24px;
+    letter-spacing: 0;
+    line-height: 28px;
+    cursor: pointer;
+    color: #00F3BB;
+  }
+  .header .container-menu .menu .menu-option:active:last-child {
+    padding-right: 0px;
+  }
+  .header .container-menu .menu .menu-option:hover {
+    color: #060A24;
+    text-decoration: line-through;
+    font-size: 16px;
+    padding-bottom: 0px;
+    padding: 0 24px;
+    letter-spacing: 0;
+    line-height: 28px;
+    cursor: pointer;
+    color: #00F3BB;
+  }
+  .header .container-menu .menu .menu-option:hover:last-child {
+    padding-right: 0px;
+  }
+
+  .section-Hello-World {
+    padding: 0 200px;
+    margin-top: 120px;
+    margin-bottom: 5px;
+  }
+  .section-Hello-World .tittle {
+    font-size: 64px;
+    max-width: 100%;
+    letter-spacing: 0;
+  }
+  .section-Hello-World .description {
+    font-size: 16px;
+    width: 628px;
+    margin-bottom: 56px;
+    letter-spacing: 0;
+    line-height: 24px;
+  }
+  .section-Hello-World .button-hello-world {
+    height: 56px;
+    width: 220px;
+    min-width: 220px;
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 5px;
   }
 }
 

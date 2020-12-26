@@ -1,8 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100&display=swap');
-
-$color-principal: #000FFF;
-$color-lyrics: #060A24;
-$font-family-header: IBM+Plex+Mono;
+@import './reset.scss';
+@import './variables.scss';
 
 @mixin menu-parameters-before-after {
 			position:absolute;
@@ -14,33 +11,48 @@ $font-family-header: IBM+Plex+Mono;
 }
 
 @mixin parameters-hamburguesa{
-	      top:50%;
+	    top:50%;
         height:2px;
         border-bottom: 0px;
 }
 
- *{
-	 margin: 0px;
-	 padding: 0px;
- }
+@mixin background-blue {
+	display: block;
+	height: 1203.5px;
+	width: 100%;
+	z-index: -1;
+	position: absolute;
+	content: '';
+	background: $color-principal;
+	transform: skew(0deg, -7deg);
+}
 
+//--------
+//Mobile
+//--------
+
+//Home Header and menu Hamburgesa 
 .header{
-	position: relative;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 0 15px;
+	padding: 0 16px;
 	height: 44px;
 
-  .header-logo{
-    height: 24px;
-    width: 24px;
-  }
+	.container-logo{
+		height: 24px;
+		width: 24px;
+		.header-logo{
+			width: 100%;
+			height: auto;
+		}
+	}
     
   .container-menu{
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		z-index: 2;
 
 		.hamburguesa{
 			position: relative;
@@ -65,9 +77,18 @@ $font-family-header: IBM+Plex+Mono;
 					position: absolute;
 					left: 0px;
 					top: 38px;
-					padding: 10px;
 					width: 100%;
-					height: auto;
+					padding: 24px 16px 0;
+
+					.menu-option{
+						padding-bottom: 24px;
+						font-family: $font-family-IBM-PLEX-MONO;
+						text-transform: uppercase;
+						font-size: 16px;
+						color: $color-white;
+						letter-spacing: 0;
+						line-height: 28px;
+					}
 				}
 			}
 		}
@@ -84,16 +105,16 @@ $font-family-header: IBM+Plex+Mono;
 					@include menu-parameters-before-after();
 					top: 20%;
 					height: 35%;
-					border-top:2px solid black;
-					border-bottom:2px solid black;
+					border-top:2px solid $color-borders;
+					border-bottom:2px solid $color-borders;
 					background-color: transparent;
 				}
 
 				&::after{
 					@include menu-parameters-before-after();
 					height:1px;
-					background-color:black;
-					border-bottom:2px solid black;
+					background-color: $color-borders;
+					border-bottom:2px solid $color-borders;
 					bottom: 20%;
 				}
 		}
@@ -109,43 +130,170 @@ $font-family-header: IBM+Plex+Mono;
 		}
   }
 }
+//End Header and menu hamburgesa
 
+//Home section Hello World
+.section-Hello-World{
+	padding: 0 16px;
+	margin-top: 30px;
+	margin-bottom: 24px;
 
+	.tittle{
+		font-family: $font-family-IBM-PLEX-SANS;
+		font-size: 36px;
+		line-height: 42px;
+		max-width: 260px;
+		font-weight: 400;
+		color: #060A24;
+		letter-spacing: 0;
+		margin-bottom: 16px;
+	}
+		
+	.description{
+		margin-top: 16px;
+		font-size: 14px;
+		letter-spacing: 0;
+        line-height: 22px;
+		font-family: $font-family-IBM-PLEX-MONO;
+		color: #060A24;
+	}
+		
+	.button-hello-world{
+		height: 48px;
+		width: 100%;
+		max-width: 320px;
+		text-transform: uppercase;
+		color: #060A24;
+		border: none;
+		font-family: $font-family-IBM-PLEX-MONO;
+		background: #00F3BB;
+		font-weight: 600;
+		margin-top: 36px;
+		letter-spacing: 0;
+		text-align: center;
+		line-height: 22px;
+		margin-bottom: 24px;
+		cursor: pointer;
+		
+			&:hover{
+				color: $color-white;
+				transition: 0.25s;
+				background: linear-gradient(to left,$color-hover-button, #00F3BB);
+			}
+	}
+}
+// End section Hello World
 
+//--------
+//Destop
+//--------
 
-
-
-@media(min-width: 415px){
-  .header{
-    height: 80px;
-
-    .header-logo{
-      height: 36px;
-      width: 36px;
-      }
-        
-		.container-menu{
-			display: inline-block;
+@media(min-width: 1280px){
+//Home Header and menu Hamburgesa 
+	.header{
+		padding: 0 100px;
+		height: 80px;
+	
+		.container-logo{
+			height: 36px;
+			width: 36px;
+		}
+		
+	  .container-menu{
+	
 			.hamburguesa-label{
 				display: none;
 			}
-				
+			
 			.menu{
-				display: inline-block;
-				position: absolute;
-				right: 100px;
+				display: flex;
+				position: relative;
+				left: auto;
+				top: auto;
 				width: auto;
 				background: transparent;
-					
+				padding: 0;
+				
 				.menu-option{
-					display: inline-block;
-					color:$color-lyrics;		
-					margin-left: 20px;
+					color:$color-lyrics;	
+					font-size: 16px;	
+					padding-bottom: 0px;
+					padding: 0 24px;
+					letter-spacing: 0;
+					line-height: 28px;
+					cursor: pointer;
+					&:last-child{
+						padding-right: 0px;
+					}
+
+					&:active{
+						color: #060A24 !important;
+						opacity: 56%;	
+						text-decoration:line-through;
+						font-size: 16px;	
+						padding-bottom: 0px;
+						padding: 0 24px;
+						letter-spacing: 0;
+						line-height: 28px;
+						cursor: pointer;
+						color: #00F3BB;	
+						&:last-child{
+							padding-right: 0px;
+						}
+					}
+
+					&:hover{
+						color:$color-lyrics;
+						text-decoration:line-through;	
+						font-size: 16px;	
+						padding-bottom: 0px;
+						padding: 0 24px;
+						letter-spacing: 0;
+						line-height: 28px;
+						cursor: pointer;
+						color: #00F3BB;	
+						&:last-child{
+							padding-right: 0px;
+						}
+					}
 				}
-		
+	
 			}
 		}
 	}
+//End Header and menu hamburgesa
+
+//Home section Hello World
+.section-Hello-World{
+		padding: 0 200px;
+		margin-top: 120px;
+		margin-bottom: 5px;
+	
+		.tittle{
+			font-size: 64px;
+			max-width: 100%;
+			letter-spacing: 0;
+		}
+			
+		.description{
+			font-size: 16px;
+			width: 628px;
+			margin-bottom: 56px;
+			letter-spacing: 0;
+			line-height: 24px;
+		}
+			
+		.button-hello-world{
+			height: 56px;
+			width: 220px;
+			min-width: 220px;
+			font-size: 18px;
+			margin-top: 0;
+			margin-bottom: 5px;
+		}
+	}
+// End section Hello World
+
 }
 
 
