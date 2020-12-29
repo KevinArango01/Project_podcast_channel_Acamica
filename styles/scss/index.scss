@@ -268,11 +268,37 @@
 }
 //End section We Come From
 
+//Home section photo album
+.photo-album{
+	.tittle-photo-album{
+		font-family: $font-family-IBM-PLEX-SANS;
+		font-size: 36px;
+		color: $color-lyrics;
+		letter-spacing: 0;
+		line-height: 42px;
+		font-weight: 400;
+		margin-bottom: 14px;
+	}
+	.photo-album-container{
+
+		.photo-container{
+			height: 243px;
+			width: 100%;
+			max-width: 415px;
+			.photo{
+				height: 100%;
+				width: 100%;
+			}
+		}
+	}
+}
+//Home section photo album
+
 //--------
 //Desktop
 //--------
 
-@media(min-width: 1280px){
+@media(min-width: 1040px){
 //Home Header and menu Hamburgesa 
 	.header{
 		padding: 0 100px;
@@ -445,26 +471,28 @@
 	.come-from-container{
 		display: flex;
 		flex-wrap: wrap;
-		padding: 0 200px;
-		height: 810px;
+		padding: 0 0 0 200px;
+		height: 350px;
+		margin-top: 160px;
 		margin-bottom: 54px;
 		max-width: 1325px;
 		align-items: center;
 		.container-img-phone{
 			height: 660px;
-			width: 458px;
+			width: 457px;
 			margin-top: -175px;
 			max-width: 458px;
+			flex: 1;
 			.img-phone{
 				max-width: 1440px;
 			}
 		}
 
 		.container-description-come-from{
-			position: relative;
-			margin-top: 0px;
-			top: -170px;
-			left: 100px;
+			padding: 0 0 458px 110px;
+			flex: 1;
+			height: 100%;
+			width: 100%;
 
 			.tittle-come-from{
 				font-size: 48px;
@@ -484,6 +512,39 @@
 	}
 }
 //End section We Come From
+
+//Home section photo album
+.photo-album{
+	.tittle-photo-album{
+		padding: 0 200px;
+		font-family: $font-family-IBM-PLEX-SANS;
+		font-size: 48px;
+		color: $color-lyrics;
+		letter-spacing: 0;
+		line-height: 42px;
+		font-weight: 400;
+		margin-bottom: 36px;
+	}
+	.photo-album-container{
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		max-width: 1440px;
+
+		.photo-container{
+			height: 364px;
+			max-width: 480px;
+			width: 30%;
+            flex-grow: 1;
+			.photo{
+				height: 100%;
+				width: 100%;
+			}
+		}
+	}
+}
+//Home section photo album
+
 
 }
 

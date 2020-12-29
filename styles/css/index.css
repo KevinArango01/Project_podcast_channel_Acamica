@@ -251,7 +251,26 @@ a {
   line-height: 22px;
 }
 
-@media (min-width: 1280px) {
+.photo-album .tittle-photo-album {
+  font-family: "IBM Plex Sans";
+  font-size: 36px;
+  color: #060A24;
+  letter-spacing: 0;
+  line-height: 42px;
+  font-weight: 400;
+  margin-bottom: 14px;
+}
+.photo-album .photo-album-container .photo-container {
+  height: 243px;
+  width: 100%;
+  max-width: 415px;
+}
+.photo-album .photo-album-container .photo-container .photo {
+  height: 100%;
+  width: 100%;
+}
+
+@media (min-width: 1040px) {
   .header {
     padding: 0 100px;
     height: 80px;
@@ -399,26 +418,28 @@ a {
   .come-from .come-from-container {
     display: flex;
     flex-wrap: wrap;
-    padding: 0 200px;
-    height: 810px;
+    padding: 0 0 0 200px;
+    height: 350px;
+    margin-top: 160px;
     margin-bottom: 54px;
     max-width: 1325px;
     align-items: center;
   }
   .come-from .come-from-container .container-img-phone {
     height: 660px;
-    width: 458px;
+    width: 457px;
     margin-top: -175px;
     max-width: 458px;
+    flex: 1;
   }
   .come-from .come-from-container .container-img-phone .img-phone {
     max-width: 1440px;
   }
   .come-from .come-from-container .container-description-come-from {
-    position: relative;
-    margin-top: 0px;
-    top: -170px;
-    left: 100px;
+    padding: 0 0 458px 110px;
+    flex: 1;
+    height: 100%;
+    width: 100%;
   }
   .come-from .come-from-container .container-description-come-from .tittle-come-from {
     font-size: 48px;
@@ -433,6 +454,33 @@ a {
     font-size: 16px;
     line-height: 24px;
     max-width: 464px;
+  }
+
+  .photo-album .tittle-photo-album {
+    padding: 0 200px;
+    font-family: "IBM Plex Sans";
+    font-size: 48px;
+    color: #060A24;
+    letter-spacing: 0;
+    line-height: 42px;
+    font-weight: 400;
+    margin-bottom: 36px;
+  }
+  .photo-album .photo-album-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 1440px;
+  }
+  .photo-album .photo-album-container .photo-container {
+    height: 364px;
+    max-width: 480px;
+    width: 30%;
+    flex-grow: 1;
+  }
+  .photo-album .photo-album-container .photo-container .photo {
+    height: 100%;
+    width: 100%;
   }
 }
 
