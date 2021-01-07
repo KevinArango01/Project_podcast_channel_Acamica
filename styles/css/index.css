@@ -33,9 +33,9 @@ a {
   position: absolute;
   content: "";
   background: linear-gradient(to left, #000FFF, #0000A3);
-  transform: skew(0deg, -7deg);
   top: 0px;
   left: 0px;
+  transform: skew(0deg, -7deg);
 }
 
 .background-blue-footer {
@@ -49,9 +49,9 @@ a {
   position: absolute;
   content: "";
   background: linear-gradient(to left, #000FFF, #0000A3);
-  clip-path: polygon(0 8%, 100% 0, 100% 100%, 0 100%);
   top: 0px;
   left: 0px;
+  clip-path: polygon(0 8%, 100% 0, 100% 100%, 0 100%);
 }
 
 .header {
@@ -179,7 +179,7 @@ a {
 .section-Hello-World .button-hello-world {
   height: 48px;
   width: 100%;
-  max-width: 320px;
+  max-width: 288px;
   text-transform: uppercase;
   color: #060A24;
   border: none;
@@ -278,6 +278,11 @@ a {
   margin-bottom: 14px;
   margin-left: 16px;
 }
+.photo-album .photo-album-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 .photo-album .photo-album-container .photo-container {
   height: 243px;
   width: 100%;
@@ -351,8 +356,8 @@ a {
 }
 .last-news .last-news-container .button-last-news {
   height: 48px;
-  width: 288px;
-  max-width: 320px;
+  width: 100%;
+  max-width: 288px;
   text-transform: uppercase;
   color: #060A24;
   border: none;
@@ -364,6 +369,7 @@ a {
   letter-spacing: 0;
   text-align: center;
   line-height: 22px;
+  margin-bottom: 24px;
   cursor: pointer;
 }
 .last-news .last-news-container .button-last-news:hover {
@@ -506,7 +512,7 @@ a {
     background: #000FFF;
   }
   .header .container-menu .menu .menu-option {
-    color: #FFF;
+    color: #FFFFFF;
   }
 
   .section-Hello-World {
@@ -532,29 +538,6 @@ a {
     font-weight: 400;
     font-family: "IBM Plex Mono";
     color: #060A24;
-  }
-  .section-Hello-World .button-hello-world {
-    height: 48px;
-    width: 100%;
-    max-width: 320px;
-    text-transform: uppercase;
-    color: #060A24;
-    border: none;
-    font-family: "IBM Plex Mono";
-    background: #00F3BB;
-    font-weight: 600;
-    font-size: 16px;
-    margin-top: 36px;
-    letter-spacing: 0;
-    text-align: center;
-    line-height: 22px;
-    margin-bottom: 24px;
-    cursor: pointer;
-  }
-  .section-Hello-World .button-hello-world:hover {
-    color: #FFFFFF;
-    transition: 0.25s;
-    background: linear-gradient(to left, #0000FE, #00F3BB);
   }
 
   .podcasts {
@@ -656,7 +639,7 @@ a {
   .photo-album .photo-album-container .photo-container {
     height: 364px;
     max-width: 480px;
-    width: 30%;
+    width: 40%;
     flex-grow: 1;
   }
   .photo-album .photo-album-container .photo-container .photo {
@@ -673,20 +656,20 @@ a {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    align-items: center;
+    justify-content: center;
     margin-top: 0;
     height: 100%;
     width: 100%;
   }
   .some-theme .some-theme-container-list .some-theme-container {
     height: 100%;
-    width: 20%;
+    width: 35%;
     display: flex;
     flex-direction: column;
     margin-top: 0;
   }
   .some-theme .some-theme-container-list .some-theme-container:first-child {
-    margin-left: 70px;
+    margin-left: 0px;
     margin-top: 0;
   }
   .some-theme .some-theme-container-list .some-theme-container:last-child {
@@ -731,8 +714,8 @@ a {
   }
   .last-news .last-news-container .button-last-news {
     height: 48px;
-    width: 288px;
-    max-width: 320px;
+    width: 100%;
+    max-width: 288px;
     text-transform: uppercase;
     color: #060A24;
     border: none;
@@ -740,10 +723,11 @@ a {
     background: #00F3BB;
     font-weight: 600;
     font-size: 16px;
-    margin-top: 15px;
+    margin-top: 36px;
     letter-spacing: 0;
     text-align: center;
     line-height: 22px;
+    margin-bottom: 24px;
     cursor: pointer;
   }
   .last-news .last-news-container .button-last-news:hover {
